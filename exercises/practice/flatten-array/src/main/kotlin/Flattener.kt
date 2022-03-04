@@ -1,5 +1,12 @@
 object Flattener {
     fun flatten(source: Collection<Any?>): List<Any> {
-        TODO("Implement the function to complete the task")
+
+        val res = source.filterNotNull().flatMap {
+            if( it is Collection<Any?>)
+                flatten(it)
+            else
+                listOf(it)
+        }
+        return res
     }
 }
