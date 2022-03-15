@@ -1,11 +1,30 @@
 class BankAccount {
-    // TODO: implement read access to 'balance'
+    private var isCountOpen = true
+    private var lock = Any()
+
+    var balance :Long = 0
+        get(){
+            synchronized(lock) {
+                if (isCountOpen)
+                    return field
+                else
+                    throw IllegalStateException("reading a closed count")
+            }
+        }
+        private set
 
     fun adjustBalance(amount: Long){
-        TODO("Implement the function to complete the task")
+        synchronized(lock) {
+            if (isCountOpen)
+                balance += amount
+            else
+                throw IllegalStateException("operations on closed count")
+        }
     }
 
     fun close() {
-        TODO("Implement the function to complete the task")
+        synchronized(lock) {
+            isCountOpen = false
+        }
     }
 }
