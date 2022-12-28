@@ -23,7 +23,7 @@ For general information about how to contribute to Exercism, please refer to the
 
 This guide covers contributing to the Kotlin track.  If you are new, this guide is for you.
 
-If, at any point, you're having any trouble, pop in the [Gitter exercism/dev room](https://gitter.im/exercism/dev) for help.
+If, at any point, you're having any trouble, pop in the [Building Exercism](https://forum.exercism.org/c/exercism/building-exercism/125) category of the [Exercism forum](https://forum.exercism.org/) for help.
 
 ## Contributing With Minimal Setup
 
